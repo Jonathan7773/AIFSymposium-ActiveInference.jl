@@ -79,7 +79,7 @@ version = "0.7.3"
 
 [[deps.ActiveInference]]
 deps = ["ActionModels", "Distributions", "IterTools", "LinearAlgebra", "LogExpFunctions", "Parameters", "Random", "ReverseDiff", "Setfield"]
-path = "/Users/jonathanehrenrechlaursen/Documents/NSC/DevBase/AIFSymposium-ActiveInference.jl/ActiveInference.jl"
+path = "ActiveInference.jl"
 uuid = "688b0e7a-0122-4325-8669-5ff08899a59e"
 version = "0.1.2"
 
