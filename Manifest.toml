@@ -78,10 +78,8 @@ uuid = "320cf53b-cc3b-4b34-9a10-0ecb113566a3"
 version = "0.7.3"
 
 [[deps.ActiveInference]]
-deps = ["ActionModels", "Distributions", "IterTools", "LinearAlgebra", "LogExpFunctions", "OMEinsum", "Parameters", "Random", "ReverseDiff", "Setfield"]
-git-tree-sha1 = "4c558aceda18a1d34d3d2b9960723ed850a812c5"
-repo-rev = "new_struct_dev"
-repo-url = "https://github.com/ComputationalPsychiatry/ActiveInference.jl"
+deps = ["ActionModels", "Distributions", "IterTools", "LinearAlgebra", "LogExpFunctions", "Parameters", "Random", "ReverseDiff", "Setfield"]
+path = "/Users/jonathanehrenrechlaursen/Documents/NSC/DevBase/AIFSymposium-ActiveInference.jl/ActiveInference.jl"
 uuid = "688b0e7a-0122-4325-8669-5ff08899a59e"
 version = "0.1.2"
 
@@ -170,12 +168,6 @@ version = "2.5.0"
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
 version = "1.1.2"
-
-[[deps.ArnoldiMethod]]
-deps = ["LinearAlgebra", "Random", "StaticArrays"]
-git-tree-sha1 = "d57bd3762d308bded22c3b82d033bff85f6195c6"
-uuid = "ec485272-7323-5ecc-a04f-4719b315124d"
-version = "0.4.0"
 
 [[deps.ArrayInterface]]
 deps = ["Adapt", "LinearAlgebra"]
@@ -278,11 +270,14 @@ deps = ["ArrayLayouts", "FillArrays", "LinearAlgebra", "PrecompileTools"]
 git-tree-sha1 = "4826c9fe6023a87029e54870ad1a9800c7ea6623"
 uuid = "aae01518-5342-5314-be14-df237901396f"
 version = "1.10.1"
-weakdeps = ["CliqueTrees", "SparseArrays"]
 
     [deps.BandedMatrices.extensions]
     BandedMatricesSparseArraysExt = "SparseArrays"
     CliqueTreesExt = "CliqueTrees"
+
+    [deps.BandedMatrices.weakdeps]
+    CliqueTrees = "60701a23-6482-424a-84db-faee86b9b1f8"
+    SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
 [[deps.BangBang]]
 deps = ["Accessors", "ConstructionBase", "InitialValues", "LinearAlgebra"]
@@ -308,12 +303,6 @@ git-tree-sha1 = "aebf55e6d7795e02ca500a689d326ac979aaf89e"
 uuid = "9718e550-a3fa-408a-8086-8db961cd8217"
 version = "0.1.1"
 
-[[deps.BatchedRoutines]]
-deps = ["LinearAlgebra"]
-git-tree-sha1 = "441db9f0399bcfb4eeb8b891a6b03f7acc5dc731"
-uuid = "a9ab73d0-e05c-5df1-8fde-d6a4645b8d8e"
-version = "0.2.2"
-
 [[deps.Bijectors]]
 deps = ["ArgCheck", "ChainRulesCore", "ChangesOfVariables", "Distributions", "DocStringExtensions", "Functors", "InverseFunctions", "IrrationalConstants", "LinearAlgebra", "LogExpFunctions", "MappedArrays", "Random", "Reexport", "Roots", "SparseArrays", "Statistics"]
 git-tree-sha1 = "642af9e4f33cfe6930088418da4c2b0d2b9de169"
@@ -337,12 +326,6 @@ version = "0.15.12"
     LazyArrays = "5078a376-72f3-5289-bfd5-ec5146d43c02"
     Mooncake = "da2b9cff-9c12-43a0-ae48-6db2b0edb7d6"
     ReverseDiff = "37e2e3b7-166d-5795-8a7a-e32c996b4267"
-
-[[deps.BitBasis]]
-deps = ["LinearAlgebra", "StaticArrays"]
-git-tree-sha1 = "89dc08420d4f593ff30f02611d136b475a5eb43d"
-uuid = "50ba71b6-fa0f-514d-ae9a-0916efc90dcf"
-version = "0.9.10"
 
 [[deps.BitIntegers]]
 deps = ["Random"]
@@ -392,38 +375,6 @@ weakdeps = ["InverseFunctions", "Test"]
     ChangesOfVariablesInverseFunctionsExt = "InverseFunctions"
     ChangesOfVariablesTestExt = "Test"
 
-[[deps.CliqueTrees]]
-deps = ["AbstractTrees", "FillArrays", "FixedSizeArrays", "Graphs", "LinearAlgebra", "SparseArrays"]
-git-tree-sha1 = "b5ac2d02afb23d7bf13b0d4a4645ab3b8c926bc1"
-uuid = "60701a23-6482-424a-84db-faee86b9b1f8"
-version = "1.12.2"
-
-    [deps.CliqueTrees.extensions]
-    AMDExt = "AMD"
-    CatlabExt = "Catlab"
-    CryptoMiniSat_jllExt = "CryptoMiniSat_jll"
-    FlowCutterPACE17_jllExt = "FlowCutterPACE17_jll"
-    KaHyParExt = "KaHyPar"
-    LaplaciansExt = "Laplacians"
-    Lingeling_jllExt = "Lingeling_jll"
-    MetisExt = "Metis"
-    PicoSAT_jllExt = "PicoSAT_jll"
-    TreeWidthSolverExt = "TreeWidthSolver"
-    libpicosat_jllExt = "libpicosat_jll"
-
-    [deps.CliqueTrees.weakdeps]
-    AMD = "14f7f29c-3bd6-536c-9a0b-7339e30b5a3e"
-    Catlab = "134e5e36-593f-5add-ad60-77f754baafbe"
-    CryptoMiniSat_jll = "cf02a7a8-8cd0-5932-97be-477f95a4d9ce"
-    FlowCutterPACE17_jll = "008204e2-cd5c-5c6d-9360-d31f32b5f6c2"
-    KaHyPar = "2a6221f6-aa48-11e9-3542-2d9e0ef01880"
-    Laplacians = "6f8e5838-0efe-5de0-80a3-5fb4f8dbb1de"
-    Lingeling_jll = "54ea7443-b7cf-5485-b0d0-86c7d7a308e1"
-    Metis = "2679e427-3c69-5b7f-982b-ece356f1e94b"
-    PicoSAT_jll = "e78fa76d-a187-569f-aede-ad11521a2edf"
-    TreeWidthSolver = "7d267fc5-9ace-409f-a54c-cd2374872a55"
-    libpicosat_jll = "6b231c3b-13f8-5ced-86ae-8860c7f75d86"
-
 [[deps.CodecLz4]]
 deps = ["Lz4_jll", "TranscodingStreams"]
 git-tree-sha1 = "d58afcd2833601636b48ee8cbeb2edcb086522c2"
@@ -435,11 +386,6 @@ deps = ["TranscodingStreams", "Zstd_jll"]
 git-tree-sha1 = "da54a6cd93c54950c15adf1d336cfd7d71f51a56"
 uuid = "6b39b394-51ab-5f42-8807-6242bab2b4c2"
 version = "0.8.7"
-
-[[deps.Collects]]
-git-tree-sha1 = "6c973f8071ca1f39ce0ed20840f908a44575fa5e"
-uuid = "08986516-18db-4a8b-8eaa-f5ef1828d8f1"
-version = "1.0.0"
 
 [[deps.Combinatorics]]
 git-tree-sha1 = "8010b6bb3388abe68d95743dcbea77650bb2eddf"
@@ -784,17 +730,6 @@ version = "2.29.0"
     SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
     StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 
-[[deps.FixedSizeArrays]]
-deps = ["Collects"]
-git-tree-sha1 = "c17496e474024e0c2330b20447dc536c86930510"
-uuid = "3821ddf9-e5b5-40d5-8e25-6813ab96b5e2"
-version = "1.2.0"
-weakdeps = ["Adapt", "Random"]
-
-    [deps.FixedSizeArrays.extensions]
-    AdaptExt = "Adapt"
-    RandomExt = "Random"
-
 [[deps.ForwardDiff]]
 deps = ["CommonSubexpressions", "DiffResults", "DiffRules", "LinearAlgebra", "LogExpFunctions", "NaNMath", "Preferences", "Printf", "Random", "SpecialFunctions"]
 git-tree-sha1 = "afb7c51ac63e40708a3071f80f5e84a752299d4f"
@@ -839,12 +774,6 @@ git-tree-sha1 = "83cf05ab16a73219e5f6bd1bdfa9848fa24ac627"
 uuid = "46192b85-c4d5-4398-a991-12ede77f4527"
 version = "0.2.0"
 
-[[deps.Graphs]]
-deps = ["ArnoldiMethod", "DataStructures", "Distributed", "Inflate", "LinearAlgebra", "Random", "SharedArrays", "SimpleTraits", "SparseArrays", "Statistics"]
-git-tree-sha1 = "7a98c6502f4632dbe9fb1973a4244eaa3324e84d"
-uuid = "86223c79-3864-5bf0-83f7-82e725a168b6"
-version = "1.13.1"
-
 [[deps.HashArrayMappedTries]]
 git-tree-sha1 = "2eaa69a7cab70a52b9687c8bf950a5a93ec895ae"
 uuid = "076d061b-32b6-4027-95e0-9a2c6f6d7e74"
@@ -865,11 +794,6 @@ version = "0.1.1"
 git-tree-sha1 = "ce1566720fd6b19ff3411404d4b977acd4814f9f"
 uuid = "313cdc1a-70c2-5d6a-ae34-0150d3930a38"
 version = "1.1.1"
-
-[[deps.Inflate]]
-git-tree-sha1 = "d1b1b796e47d94588b3757fe84fbf65a5ec4a80d"
-uuid = "d25df0c9-e2be-5dd7-82c8-3ad0b3e990b9"
-version = "0.1.5"
 
 [[deps.InitialValues]]
 git-tree-sha1 = "4da0f88e9a39111c2fa3add390ab15f3a44f3ca3"
@@ -1321,34 +1245,6 @@ version = "1.0.0"
 uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
 version = "1.3.0"
 
-[[deps.OMEinsum]]
-deps = ["AbstractTrees", "BatchedRoutines", "ChainRulesCore", "Combinatorics", "LinearAlgebra", "MacroTools", "OMEinsumContractionOrders", "Test", "TupleTools"]
-git-tree-sha1 = "892a0b6efa72348cc83c777f6625ab369c49be97"
-uuid = "ebe7aa44-baf0-506c-a96f-8464559b3922"
-version = "0.9.2"
-
-    [deps.OMEinsum.extensions]
-    AMDGPUExt = "AMDGPU"
-    CUDAExt = "CUDA"
-
-    [deps.OMEinsum.weakdeps]
-    AMDGPU = "21141c5a-9bdb-4563-92ae-f87d6854732e"
-    CUDA = "052768ef-5323-5732-b1bb-66c8b64840ba"
-
-[[deps.OMEinsumContractionOrders]]
-deps = ["AbstractTrees", "CliqueTrees", "DataStructures", "JSON", "SparseArrays", "StatsBase", "Suppressor", "TreeWidthSolver"]
-git-tree-sha1 = "fc1fd18adef9505b6753d8541ddc2cc9592a72f1"
-uuid = "6f22d1fd-8eed-4bb7-9776-e7d684900715"
-version = "1.2.2"
-
-    [deps.OMEinsumContractionOrders.extensions]
-    KaHyParExt = ["KaHyPar"]
-    LuxorTensorPlot = ["LuxorGraphPlot"]
-
-    [deps.OMEinsumContractionOrders.weakdeps]
-    KaHyPar = "2a6221f6-aa48-11e9-3542-2d9e0ef01880"
-    LuxorGraphPlot = "1f49bdf2-22a7-4bc4-978b-948dc219fbbc"
-
 [[deps.OffsetArrays]]
 git-tree-sha1 = "117432e406b5c023f665fa73dc26e79ec3630151"
 uuid = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
@@ -1789,12 +1685,6 @@ git-tree-sha1 = "503688b59397b3307443af35cd953a13e8005c16"
 uuid = "1277b4bf-5013-50f5-be3d-901d8477a67a"
 version = "2.0.0"
 
-[[deps.SimpleTraits]]
-deps = ["InteractiveUtils", "MacroTools"]
-git-tree-sha1 = "be8eeac05ec97d379347584fa9fe2f5f76795bcb"
-uuid = "699a6c99-e7fa-54fc-8d76-47d257e15c1d"
-version = "0.9.5"
-
 [[deps.Sockets]]
 uuid = "6462fe0b-24de-5631-8697-dd941f90decc"
 version = "1.11.0"
@@ -2089,17 +1979,6 @@ version = "0.4.85"
     LazyArrays = "5078a376-72f3-5289-bfd5-ec5146d43c02"
     OnlineStatsBase = "925886fa-5bf2-5e8e-b522-a9147a512338"
     Referenceables = "42d2dcc6-99eb-4e98-b66c-637b7d73030e"
-
-[[deps.TreeWidthSolver]]
-deps = ["AbstractTrees", "BitBasis", "Combinatorics", "Graphs", "SparseArrays"]
-git-tree-sha1 = "6738f4a82bba556df9c42aed0f8642ea7344033a"
-uuid = "7d267fc5-9ace-409f-a54c-cd2374872a55"
-version = "0.3.5"
-
-[[deps.TupleTools]]
-git-tree-sha1 = "41e43b9dc950775eac654b9f845c839cd2f1821e"
-uuid = "9d95972d-f1c8-5527-a6e0-b4b365fa01f6"
-version = "1.6.0"
 
 [[deps.Turing]]
 deps = ["ADTypes", "AbstractMCMC", "Accessors", "AdvancedHMC", "AdvancedMH", "AdvancedPS", "AdvancedVI", "BangBang", "Bijectors", "Compat", "DataStructures", "Distributions", "DistributionsAD", "DocStringExtensions", "DynamicPPL", "EllipticalSliceSampling", "ForwardDiff", "Libtask", "LinearAlgebra", "LogDensityProblems", "MCMCChains", "NamedArrays", "Optimization", "OptimizationOptimJL", "OrderedCollections", "Printf", "Random", "Reexport", "SciMLBase", "SpecialFunctions", "Statistics", "StatsAPI", "StatsBase", "StatsFuns"]
