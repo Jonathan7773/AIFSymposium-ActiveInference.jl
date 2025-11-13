@@ -4,9 +4,9 @@ using Plots
 using Random
 using Measures
 
-#---------------------------------------------------------------------------------------------------------#
-#-------------------------- MAB Environment for Generative Model Example -------------------------------#
-#---------------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------------#
+#-------------------------- MAB Environment -------------------------------#
+#--------------------------------------------------------------------------#
 mutable struct MAB
     p::Float64
     switch_after::Int
@@ -31,7 +31,7 @@ function MAB(; p=0.8, switch_after=30, seed=42)
 end
 
 function pull_arm!(env::MAB, action::Vector{Int})
-    action = action[1]  # extract action index
+    action = action[1]  
     env.t += 1
 
     # determine reward/loss
@@ -74,8 +74,8 @@ function plot_history(env::MAB, store_A_matrices::Vector{Vector{Float64}}, store
         ylabel = "Arm",
         title = "MAB Reward Probabilities and Actions",
         cbar_title = "P(Reward)",
-        xticks = (0:25:100),        # <-- added for alignment
-        xlims = (0, 100),           # <-- force same horizontal range
+        xticks = (0:25:100),       
+        xlims = (0, 100),          
         size = (800, 250),
         legend = true
     )
@@ -95,7 +95,7 @@ function plot_history(env::MAB, store_A_matrices::Vector{Vector{Float64}}, store
         yflip = true,
         yticks = (1:size(A_mat, 1)),
         xticks = (0:25:100),
-        xlims = (0, 100),           # ensure same x range
+        xlims = (0, 100),
         xlabel = "",
         ylabel = "Arm",
         cbar_title = "P(o|s)",
@@ -113,7 +113,7 @@ function plot_history(env::MAB, store_A_matrices::Vector{Vector{Float64}}, store
         yflip = true,
         yticks = (1:size(post_mat, 1)),
         xticks = (0:25:100),
-        xlims = (0, 100),           # ensure same x range
+        xlims = (0, 100),
         xlabel = "Trial",
         ylabel = "State",
         cbar_title = "P(s|o)",
@@ -122,17 +122,10 @@ function plot_history(env::MAB, store_A_matrices::Vector{Vector{Float64}}, store
         size = (800, 200)
     )
 
-    # --------------------------
     # Combine vertically
-    # --------------------------
-    plot(p1, p2, p3; layout = @layout([a; b; c]), size = (1000, 550),
+    plot(p1, p2, p3; layout = @layout([a; b; c]), size = (1500, 650),
      left_margin = 10mm,
      bottom_margin = 5mm)
 end
-
-
-
-
-
 
 end
